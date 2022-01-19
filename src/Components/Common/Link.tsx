@@ -6,7 +6,6 @@ import CombineClasses from '@CommonTS/CombineClasses';
 interface Props {
     to: string;
     className?: string;
-    [key in JSX.Element]: any;
 }
 
 const regex = /^((http(s)?)|(ftp))(:\/\/)\S*$/;

@@ -1,6 +1,7 @@
 {
     "compilerOptions": {
         "baseUrl": ".",
+        "rootDir": ".",
 
         "paths": {
             "@/*": ["./src/*"],
@@ -16,9 +17,6 @@
 
             "@ts/*": ["./src/ts/*"],
             "@CommonTS/*": ["./src/ts/Common/*"],
-
-            "@muim/*": ["./node_modules/@mui/material/*"],
-            "@muii/*": ["./node_modules/@mui/icons-material/*"]
         }
     }
 }

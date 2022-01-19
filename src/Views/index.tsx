@@ -1,17 +1,8 @@
-import Route from '@ts/Classes/Route';
+import { Route } from 'react-router-dom';
 
 // Import all views
 import Home from './Home';
 
-/*
-    Add your routes below.
-    For non exact routes, use:
-
-    new Route('/examplepath/*', ExampleComponent);
-*/
-
-const Routes = [
-    new Route('/', Home)
+export default [
+    <Route path="/" element={<Home />} />
 ];
-
-export default Routes;

@@ -1,31 +1,19 @@
-import Logo from '@Assets/svg/Logo.svg';
+import Page from '@Components/Essential/Page';
 
-/*
-    The default export for external links
-    is ExternalLink, but to shorten the
-    length, we import it as EL
-*/
-import {default as EL} from '@CommonComponents/ExternalLink';
+import Hero from '@Components/Graphical/Hero';
+import Hamar from '@Assets/png/Hamar.png';
 
-const Home = () => <div className="app">
-    <header className="app-header">
-        <p>
-            React template with Typescript
-            by joaisa17
-        </p>
+const Home = () => <Page title="Home">
+        <div className="text-content mt bg p">
+            <h1>Flytt til hamar!</h1>
 
-        <img src={Logo} className="app-logo" alt="Logo" />
+            <p>
+                Ønsker du å bo i en by som tilbyr alt du trenger? Ønsker du å flytte
+                til et tettsted som inkluderer alle? Da er Hamar et sted for deg!
+            </p>
 
-        <p>
-            Edit <code>src/Views/Home/index.tsx</code> and save to reload
-        </p>
-
-        <EL content="Learn React" href="https://reactjs.org" />
-
-        <EL href="https://github.com/joaisa17">
-            Visit joaisa17 on GitHub
-        </EL>
-    </header>
-</div>
+            <h2>Tre grunner for å flytte til Hamar</h2>
+        </div>
+</Page>
 
 export default Home;
