@@ -22,7 +22,7 @@ body {
 .text-content {
     &.mt { margin-top: 64px; }
     &.bg {
-        background-color: rgba(0, 0, 0, .5);
+        background-color: rgba(0, 0, 0, .2);
 
         &.p { padding: 10px; }
     }
@@ -32,10 +32,6 @@ body {
     h1, h2 {
         margin: 0;
         text-align: center;
-    }
-
-    h2 {
-        margin-top: 94px;
     }
 
     width: 600px;

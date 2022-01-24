@@ -16,7 +16,7 @@
             "@scss/*": ["./src/scss/*"],
 
             "@ts/*": ["./src/ts/*"],
-            "@CommonTS/*": ["./src/ts/Common/*"],
+            "@CommonTS/*": ["./src/ts/Common/*"]
         }
     }
 }

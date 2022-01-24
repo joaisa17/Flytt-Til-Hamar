@@ -1,10 +1,9 @@
 interface Props {
-    position: [number, number, number];
     size: [number, number, number];
     color: JSX.IntrinsicElements['meshStandardMaterial']['color'];
 }
 
-const Box = ({position, size, color, ...props}: JSX.IntrinsicElements['mesh'] & Props) => {
+const Box = ({size, color, ...props}: JSX.IntrinsicElements['mesh'] & Props) => {
 
     return <mesh
         {...props}
