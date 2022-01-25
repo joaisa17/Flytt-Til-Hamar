@@ -10,19 +10,21 @@ interface Props {
 
 const regex = /^((http(s)?)|(ftp))(:\/\/)\S*$/;
 
-const ExternalLink: FC<Props> = ({to, className, ...props}) => to.match(regex)?
+const ExternalLink: FC<Props> = ({to, className, children, ...props}) => to.match(regex)?
 <a
     className={CombineClasses('external-link', className)}
     href={to}
     target="_blank"
     rel="noopener noreferrer"
     {...props}
+    children={children}
 />
 :
 <Link
     className={CombineClasses('internal-link', className)}
     to={to}
     {...props}
+    children={children}
 />;
 
 export default ExternalLink;
