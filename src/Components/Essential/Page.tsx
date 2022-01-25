@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import { Navigate } from 'react-router-dom';
 
 import Auth from '@ts/Essential/Auth';
@@ -11,11 +11,28 @@ interface Props {
 
     className?: string;
     protected?: boolean;
+
+    targetId?: string;
+    disableScrollOnLoad?: boolean;
 }
 
 const Page: FC<Props> = props => {
 
-    if (props.protected && !Auth.isLoggedIn()) return <Navigate to="/" />
+    useEffect(() => {
+        if (!props.disableScrollOnLoad) {
+            const element = (
+                (props.targetId && document.getElementById(props.targetId))
+                || (window.location.hash && document.querySelector(window.location.hash))
+            );
+
+            element ? element.scrollIntoView({ behavior: 'smooth' }) : window.scroll({
+                top: 0,
+                behavior: 'smooth'
+            })
+        }
+    }, [props.disableScrollOnLoad, props.targetId]);
+
+    if (props.protected && !Auth.isLoggedIn()) return <Navigate to="/login" />
     
     return <div className={CombineClasses('page content', props.className)}>
         {props.children}

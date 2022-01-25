@@ -1,0 +1,48 @@
+.divider {
+    $color: darken($col1, 2);
+    $split: 0.5%;
+    $section-height: 20vh;
+
+    width: 120%;
+    left: -10%;
+
+    height: 20px;
+
+    padding: 20px;
+
+    background-color: $color;
+
+    position: relative;
+
+    >.top, >.bottom {
+        width: 100%;
+        height: $section-height;
+
+        position: absolute;
+        left: 0;
+    }
+
+    >.top {
+        top: -$section-height;
+
+        background-image: linear-gradient(
+            to bottom left,
+            transparent, 50%,
+            $color calc(50% + $split)
+        );
+    }
+
+    >.bottom {
+        bottom: -$section-height;
+
+        background-image: linear-gradient(
+            to top right,
+            transparent, 50%,
+            $color calc(50% + $split)
+        );
+    }
+
+    &.inverted {
+        transform: scaleX(-1)
+    }
+}

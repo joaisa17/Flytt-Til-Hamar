@@ -2,7 +2,7 @@ import { FC, useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import Cube from './Cube';
 
-const color = "rgba(10, 120, 180, 0.5)";
+const color = "rgb(10, 120, 180)";
 
 const count = 24;
 const range = 8;

@@ -10,12 +10,12 @@ class Auth {
         return false;
     }
 
-    async logout() {
+    logout() {
         this.authenticated = false;
         return true;
     }
 
-    async isLoggedIn() {
+    isLoggedIn() {
         return this.authenticated;
     }
 }

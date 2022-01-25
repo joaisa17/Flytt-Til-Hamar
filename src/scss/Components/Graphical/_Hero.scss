@@ -1,9 +1,14 @@
 .hero {
     $padding: 24px;
+    $extra-height: 4px;
 
     position: relative;
     width: 100%;
-    min-height: calc(100vh - $header-height - $padding * 2);
+    min-height: calc(100vh - $padding * 2 + $extra-height);
+
+    &.top {
+        min-height: calc(100vh - $header-height - $padding * 2 + $extra-height);
+    }
 
     .background {
         position: absolute;
@@ -20,8 +25,9 @@
 
         background-attachment: fixed;
 
-        filter: blur(0.1vh) contrast(1.1) brightness(0.4);
+        filter: blur(0.15vh) contrast(1.1) brightness(0.4); 
     }
 
     padding: $padding 0;
+    margin-bottom: -$extra-height;
 }
