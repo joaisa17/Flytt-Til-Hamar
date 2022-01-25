@@ -10,7 +10,7 @@ interface Props {
 }
 
 const Hero: FC<Props> = props => <div
-    style={props.mt? {paddingTop: '180px'} : undefined}
+    style={props.mt? {paddingTop: 'calc(40px + 10vh)'} : undefined}
     className={CombineClasses('hero', props.top && 'top')}
 >
     <div className="background" style={{

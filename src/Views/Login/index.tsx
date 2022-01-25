@@ -12,15 +12,18 @@ const Login = () => {
 
     const navigate = useNavigate();
 
+    var timeout: NodeJS.Timeout;
     async function submit() {
-        if (!password) return;
+        if (!password) return setPassword('');
         const result = await Auth.login(password);
 
         if (!result) {
+            if (timeout) clearTimeout(timeout);
+
             setPasswordError("Incorrect password");
-            setTimeout(() => {
+            timeout = setTimeout(() => {
                 setPasswordError(undefined);
-            }, 1800);
+            }, 2500);
 
             return;
         }
@@ -33,15 +36,16 @@ const Login = () => {
             <h3>Please log in to continue</h3>
             
             <TextField
+                error={password === '' ? true : false}
                 type="password"
-                label="Password"
+                label={`Password ${password === ''? '(Required)' : ''}`}
                 onChange={e => setPassword(e.target.value)}
                 onKeyPress={e => e.key === 'Enter' && submit()}
             />
 
             <Button onClick={submit} className="submit" variant="outlined">Submit</Button>
         
-            {passwordError && <Alert severity="error" className="error">
+            {passwordError && <Alert sx={{ width: 'fit-content', mt: '10px' }} severity="error" className="error">
                 <AlertTitle>ERROR</AlertTitle>
                 Feil passord din bæs!
             </Alert>}
