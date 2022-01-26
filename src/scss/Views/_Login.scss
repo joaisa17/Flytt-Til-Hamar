@@ -1,9 +1,14 @@
 .page-login {
     .login-form {
-        margin: 40px 0 0 60px;
+        margin: 40px 0 20px 10%;
 
         .submit {
             margin-left: 10px;
+        }
+
+        .error {
+            width: fit-content;
+            margin-top: 10px;
         }
     }
 }

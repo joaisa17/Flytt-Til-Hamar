@@ -45,7 +45,7 @@ const Login = () => {
 
             <Button onClick={submit} className="submit" variant="outlined">Submit</Button>
         
-            {passwordError && <Alert sx={{ width: 'fit-content', mt: '10px' }} severity="error" className="error">
+            {passwordError && <Alert severity="error" className="error">
                 <AlertTitle>ERROR</AlertTitle>
                 Feil passord din bæs!
             </Alert>}

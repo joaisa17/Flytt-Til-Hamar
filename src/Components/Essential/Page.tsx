@@ -1,5 +1,6 @@
 import { FC, useEffect } from 'react';
 import { Navigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 import Auth from '@ts/Essential/Auth';
 
@@ -35,6 +36,10 @@ const Page: FC<Props> = props => {
     if (props.protected && !Auth.isLoggedIn()) return <Navigate to="/login" />
     
     return <div className={CombineClasses('page content', props.className)}>
+        <Helmet>
+            {props.title && <title>{props.title}</title>}
+        </Helmet>
+        
         {props.children}
     </div>
 }
