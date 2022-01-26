@@ -1,7 +1,7 @@
 @import '_Variables.scss';
-@import '_Fonts.scss';
+@import 'Fonts';
 
-@import '_Index.scss';
+@import 'Index';
 
-@import './Components/_All.scss';
-@import './Views/_All.scss';
+@import 'Components/All';
+@import 'Views/All';
